@@ -13,9 +13,9 @@ model = init_model(tokenizer)
 
 text_generator = TextGenerationPipeline(model, tokenizer)
 
-path = '/content/drive/MyDrive/100word/test/raw.txt'
+path = '/dataset/running/raw.txt'
 
-pathout = '/content/drive/MyDrive/100word/test/國文課程成果-'+ now.strftime("%d-%m-%Y-%H-%M-%S") +'.txt'
+pathout = '/dataset/running/國文課程成果-'+ now.strftime("%d-%m-%Y-%H-%M-%S") +'.txt'
 
 f = open(path, 'r',encoding="utf-8")
 fout = open(pathout, 'w',encoding="utf-8")

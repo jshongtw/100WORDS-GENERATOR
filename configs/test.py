@@ -1,9 +1,10 @@
-path = '/content/drive/MyDrive/100word'
+path = '/dataset/'
 model_path = path + '/models/'
 
 data = {
-    'path': path + '/test/',
+    'path': path + '/running/',
 }
+
 data = {
     **data,
     'raw': data['path'] + 'raw.txt',
@@ -13,13 +14,13 @@ data = {
 }
 
 model = {
-    'max_length': 64,
-    'n_positions': 512,
-    'n_ctx': 512,
-    'n_embd': 768,
-    'n_layer': 4,
-    'n_head': 4,
-    'batch_size': 8
+    'max_length': 1024,
+    'n_positions': 1024,
+    'n_ctx': 1024,
+    'n_embd': 1024,
+    'n_layer': 24,
+    'n_head': 16,
+    'batch_size': 6
 }
 
 

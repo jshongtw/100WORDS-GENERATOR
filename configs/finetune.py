@@ -1,9 +1,10 @@
-path = '/data/novels'
+path = '/dataset/'
 model_path = path + '/models/'
 
 data = {
-    'path': path + '/train/',
+    'path': path + '/running/',
 }
+
 data = {
     **data,
     'raw': data['path'] + 'raw.txt',
@@ -19,3 +20,5 @@ model = {
 
 data = type('data', (), data)
 model = type('model', (), model)
+
+

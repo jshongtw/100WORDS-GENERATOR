@@ -1,9 +1,10 @@
-path = '/content/drive/MyDrive/100word'
+path = '/dataset/'
 model_path = path + '/models/'
 
 data = {
-    'path': path + '/train/',
+    'path': path + '/running/',
 }
+
 data = {
     **data,
     'raw': data['path'] + 'raw.txt',
