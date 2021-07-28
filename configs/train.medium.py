@@ -1,9 +1,10 @@
-path = '/dataset/'
+path = '/dataset/running'
 model_path = path + '/models/'
 
 data = {
-    'path': path + '/running/',
+    'path': path + '/train-data/',
 }
+
 
 data = {
     **data,

@@ -13,9 +13,8 @@ model = init_model(tokenizer)
 
 text_generator = TextGenerationPipeline(model, tokenizer)
 
-path = '/dataset/running/raw.txt'
-
-pathout = '/dataset/running/國文課程成果-'+ now.strftime("%d-%m-%Y-%H-%M-%S") +'.txt'
+path = '/dataset/running/train_data/raw.txt'
+pathout = '/dataset/running/train_data/ai100-chinese.txt'
 
 f = open(path, 'r',encoding="utf-8")
 fout = open(pathout, 'w',encoding="utf-8")
