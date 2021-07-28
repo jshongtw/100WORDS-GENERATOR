@@ -1,8 +1,8 @@
-path = '/dataset/running'
+path = './dataset/running'
 model_path = path + '/models/'
 
 data = {
-    'path': path + '/train-data/',
+    'path': path + '/train_data/',
 }
 
 data = {
