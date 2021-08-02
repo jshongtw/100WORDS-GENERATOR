@@ -13,7 +13,7 @@ model = init_model(tokenizer)
 
 text_generator = TextGenerationPipeline(model, tokenizer)
 
-path = 'dataset/test/raw.txt'
+path = 'dataset/test/原始課程成果100字.txt'
 pathout = 'dataset/test/ai100-chinese.txt'
 
 f = open(path, 'r',encoding="utf-8")
@@ -22,8 +22,8 @@ fout = open(pathout, 'w',encoding="utf-8")
 dtitle = '國文課程學習成果100字簡述- '+ now.strftime("%d/%m/%Y %H:%M:%S") + '\n\n'
 fout.write(dtitle)
 
-for k in range(400):
-  rand = random.randint(1,100)
+for k in range(1000):
+  rand = random.randint(1,30)
   for r in range(rand):
     line = f.readline()
 
@@ -31,11 +31,15 @@ for k in range(400):
   print(str(k).zfill(6),'原文: ',input)
 
 
-  glist = text_generator((input[:7]), max_length=90, do_sample=True, top_k=10, repetition_penalty=1.3)
-  sentence = str(k).zfill(6) + ': '+ glist[0]["generated_text"] + '...'+ '\n'
+  glist = text_generator((input[:7]), max_length=99, do_sample=True, top_k=5, repetition_penalty=1.3)
+  generated = glist[0]["generated_text"]
+  lastperiod = generated.rfind('。')
+  print('last period 位置', lastperiod)
+ 
+  sentence = str(k).zfill(6) + ': '+ generated[0:(lastperiod+1)] +  '\n'
+  
   print(sentence)
-  if (input[:6] != glist[0]["generated_text"][:10]):
-    fout.write(sentence)
+  fout.write(sentence)
 
 
 f.close()
